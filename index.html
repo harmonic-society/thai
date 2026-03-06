@@ -928,60 +928,97 @@
         footer {
             background: var(--dark);
             color: var(--white);
-            padding: 60px 0 30px;
+            padding: 30px 0;
         }
 
-        .footer-content {
+        .footer-inner {
+            text-align: center;
+        }
+
+        .footer-logo-link {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo-link .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .footer-copy {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+
+        /* 受講の流れセクション */
+        .flow {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #F0F8FF 0%, #E8FFF9 100%);
+        }
+
+        .flow-steps {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .footer-brand h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+        .flow-step {
+            text-align: center;
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
-        .footer-brand p {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9rem;
-            line-height: 1.8;
+        .flow-step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 900;
+            margin: 0 auto 15px;
         }
 
-        .footer-links h4 {
+        .flow-step h3 {
             font-size: 1rem;
+            color: var(--dark);
+        }
+
+        /* FAQセクション */
+        .faq {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 25px 30px;
             margin-bottom: 20px;
         }
 
-        .footer-links ul {
-            list-style: none;
+        .faq-item h3 {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 10px;
         }
 
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--secondary);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .footer-bottom p {
-            color: rgba(255,255,255,0.5);
-            font-size: 0.85rem;
+        .faq-item p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.8;
         }
 
         /* レスポンシブ */
@@ -1003,9 +1040,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
+            .flow-steps {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -1054,6 +1090,10 @@
             .trust-badges {
                 flex-direction: column;
                 gap: 30px;
+            }
+
+            .flow-steps {
+                grid-template-columns: 1fr 1fr;
             }
 
             .header-cta {
@@ -1202,12 +1242,12 @@
                 <div class="solution-card">
                     <div class="solution-icon">🗣️</div>
                     <h3>日本語OKの<br>バイリンガル講師</h3>
-                    <p>ネイティブまたはタイ在住経験のある講師が、日本語でわかりやすく指導。微妙なニュアンスの違いも日本語で説明するので、初心者でも安心です。</p>
+                    <p>ネイティブまたはタイ在住経験のある講師が、日本語でわかりやすく指導。微妙なニュアンスの違いも日本語で説明するので、初心者でも安心です。ご要望に合わせ、現地で活躍していた日本人講師も在籍しております。</p>
                 </div>
                 <div class="solution-card">
                     <div class="solution-icon">💻</div>
                     <h3>完全オンライン<br>好きな時間に受講</h3>
-                    <p>自宅やカフェなど、好きな場所から受講可能。朝から夜まで柔軟にスケジュールを調整できます。レッスンは録画OKなので、復習も簡単。</p>
+                    <p>自宅やカフェなど、好きな場所から受講可能。朝から夜まで対応しており、柔軟にスケジュールを調整できます。レッスンは録画OKなので、復習も簡単。</p>
                 </div>
                 <div class="solution-card">
                     <div class="solution-icon">📝</div>
@@ -1244,7 +1284,7 @@
                 </div>
                 <div class="benefit-card">
                     <h3><span class="emoji">🏠</span>タイ移住・長期滞在の準備</h3>
-                    <p>病院、銀行、役所など、生活に必要な場面で自分の言葉で対応できる安心感を手に入れられます。</p>
+                    <p>病院、銀行、役所など、生活に必要な場面で自分のことばで対応できる安心感を手に入れられます。</p>
                 </div>
             </div>
         </div>
@@ -1285,7 +1325,7 @@
                             <span>受講歴3ヶ月</span>
                         </div>
                     </div>
-                    <p>「タイドラマにハマって、推しの言葉を理解したくて始めました。先生が私の興味に合わせてドラマのセリフを教材にしてくれるので、毎回のレッスンが楽しみです！」</p>
+                    <p>「タイドラマにハマって、推しのことばを理解したくて始めました。先生が私の興味に合わせてドラマのセリフを教材にしてくれるので、毎回のレッスンが楽しみです！」</p>
                 </div>
                 <div class="testimonial">
                     <div class="testimonial-header">
@@ -1305,14 +1345,14 @@
     <section class="contents">
         <div class="container">
             <div class="section-title">
-                <h2>コース・料金</h2>
-                <p>あなたの目標に合わせて選べる3つのコース</p>
+                <h2>クラス・料金</h2>
+                <p>あなたの目標に合わせて選べる3つのクラス</p>
             </div>
             <div class="course-table">
                 <table>
                     <thead>
                         <tr>
-                            <th>コース</th>
+                            <th>クラス</th>
                             <th>レッスン回数</th>
                             <th>期間</th>
                             <th>料金（税込）</th>
@@ -1321,29 +1361,30 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><span class="course-name">Sコース</span></td>
-                            <td>50分 × 4回</td>
-                            <td>1ヶ月</td>
+                            <td><span class="course-name">Sクラス</span><br><small>まずは試してみたい方に</small></td>
+                            <td>月4回（50分/回）</td>
+                            <td>週1日〜のペースでスタート</td>
                             <td><span class="price">¥16,500〜</span><span class="price-per">/月</span></td>
-                            <td>¥4,125〜</td>
+                            <td>¥4,125〜<br><small>コンシェルジュサポートあり</small></td>
                         </tr>
                         <tr>
-                            <td><span class="course-name">Mコース</span><span class="course-popular">人気</span></td>
-                            <td>50分 × 20回</td>
-                            <td>5ヶ月</td>
+                            <td><span class="course-name">Mクラス</span><span class="course-popular">人気No.1</span><br><small>しっかり基礎を固めたい方に</small></td>
+                            <td>5ヶ月20回（50分/回）</td>
+                            <td>週2日の対応も可能</td>
                             <td><span class="price">¥77,000〜</span></td>
-                            <td>¥3,850〜</td>
+                            <td>¥3,850〜<br><small>学習プラン作成・進捗管理付き</small></td>
                         </tr>
                         <tr>
-                            <td><span class="course-name">Lコース</span></td>
-                            <td>50分 × 40回</td>
-                            <td>10ヶ月</td>
+                            <td><span class="course-name">Lクラス</span><br><small>本格的な習得を目指す方に</small></td>
+                            <td>10ヶ月40回（50分/回）</td>
+                            <td>週2日、3日の対応も可能</td>
                             <td><span class="price">¥143,000〜</span></td>
-                            <td>¥3,575〜</td>
+                            <td>¥3,575〜<br><small>最安値プラン、学習プラン・進捗管理付き</small></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            <p style="color: rgba(255,255,255,0.8); text-align: center; margin-bottom: 30px; font-size: 0.95rem;">※ シングル（マンツーマン）・ペア（2名）・トリオ（3名）でレッスン料金が異なります。詳しくはお問い合わせください。</p>
             <div class="lesson-types">
                 <div class="lesson-type">
                     <h3>シングル</h3>
@@ -1373,8 +1414,8 @@
             <div class="offer-cards">
                 <div class="offer-card featured">
                     <div class="offer-header">
-                        <h3>新学期語学チャレンジ</h3>
-                        <h3>「ゴガチャレ！」</h3>
+                        <h3>ゴガチャレ！</h3>
+                        <p>50分×4回／11,000円（税込）</p>
                     </div>
                     <div class="offer-body">
                         <div class="offer-price">¥11,000</div>
@@ -1427,6 +1468,58 @@
         </div>
     </section>
 
+    <!-- 受講の流れセクション -->
+    <section class="flow">
+        <div class="container">
+            <div class="section-title">
+                <h2>受講の流れ</h2>
+                <p>かんたん4ステップで始められます</p>
+            </div>
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="flow-step-number">1</div>
+                    <h3>体験レッスンのお申し込み</h3>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-number">2</div>
+                    <h3>体験レッスン（50分）</h3>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-number">3</div>
+                    <h3>カウンセリング・プランのご提案</h3>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-number">4</div>
+                    <h3>ご入会・レッスン開始</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQセクション -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>よくあるご質問</h2>
+                <p>お問い合わせの多いご質問をまとめました</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>Q. レッスンの振替やキャンセルはできますか？</h3>
+                    <p>前日の19:00までにご連絡いただければ、月1回まで振替が可能です。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q. 支払い方法を教えてください。</h3>
+                    <p>クレジットカードおよび銀行振込に対応しております。分割払いには対応しておりません。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q. 教材はどうなりますか？</h3>
+                    <p>受講生のレベルに合わせて講師が教材を準備いたします。市販教材を使用する場合はAmazon等で実費購入いただくことがあります。また、講師がサポート用プリントを使用する場合は共有いたします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Action セクション -->
     <section class="action">
         <div class="container">
@@ -1440,28 +1533,11 @@
     <!-- フッター -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>LaLa GLOBAL LANGUAGE</h3>
-                    <p>「そのチャレンジが未来を変える。」<br>世界35言語対応のオンライン語学スクール。バイリンガル講師によるマンツーマンレッスンで、あなたの語学学習をサポートします。</p>
-                </div>
-                <div class="footer-links">
-                    <h4>言語コース</h4>
-                    <ul>
-                        <li><a href="https://lala-global-language.com/thai/">タイ語</a></li>
-                        <li><a href="https://lala-global-language.com">その他世界35言語</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>お問い合わせ</h4>
-                    <ul>
-                        <li><a href="https://lala-global-language.com/contact/">無料相談・体験予約</a></li>
-                        <li><a href="https://lala-global-language.com">公式サイト</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; LaLa GLOBAL LANGUAGE. All rights reserved.</p>
+            <div class="footer-inner">
+                <a href="https://lala-global-language.com/" target="_blank" rel="noopener" class="footer-logo-link">
+                    <img src="lala-logo.png" alt="LaLa GLOBAL LANGUAGE" class="logo-img">
+                </a>
+                <p class="footer-copy">&copy; LaLa GLOBAL LANGUAGE. All rights reserved.</p>
             </div>
         </div>
     </footer>
